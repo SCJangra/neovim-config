@@ -14,6 +14,10 @@ local generic_setup = function()
   set('n', '<leader>lj', diagnostic.goto_next, { desc = 'Next diagnostic' })
   set('n', '<leader>lk', diagnostic.goto_next, { desc = 'Prev diagnostic' })
   set('n', '<leader>lR', '<CMD>LspRestart<CR>', { desc = 'Restart' })
+
+  return {
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
+  }
 end
 
 local servers = {
@@ -33,9 +37,9 @@ return {
   {
     'neovim/nvim-lspconfig',
     name = 'lspconfig',
-    -- For not this is lazy enough
+    -- For now this is lazy enough
     event = 'BufReadPost',
-    dependencies = 'mason-lspconfig',
+    dependencies = { 'mason-lspconfig', 'nvim-cmp' },
     config = nvim_lspconfig
   },
 
