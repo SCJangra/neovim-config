@@ -1,6 +1,7 @@
 local set = vim.keymap.set
 local diagnostic = vim.diagnostic
 local buf = vim.lsp.buf
+local utils = require('utils')
 
 local generic_setup = function()
   set('n', 'gd', buf.definition, { desc = 'LSP definition' })
@@ -16,7 +17,8 @@ local generic_setup = function()
   set('n', '<leader>lR', '<CMD>LspRestart<CR>', { desc = 'Restart' })
 
   return {
-    capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    on_attach = utils.setup_auto_format
   }
 end
 
