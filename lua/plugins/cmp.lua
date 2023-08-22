@@ -22,6 +22,27 @@ local options = {
   }
 }
 
+local config = function(_, opts)
+  local cmp = require 'cmp'
+
+  opts.sources = cmp.config.sources {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+  }
+
+  opts.mapping = cmp.mapping.preset.insert {
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    }
+  }
+
+  cmp.setup(opts)
+end
+
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
@@ -34,15 +55,5 @@ return {
     'onsails/lspkind.nvim'
   },
   opts = options,
-  config = function(_, opts)
-    local cmp = require 'cmp'
-
-    opts.sources = cmp.config.sources {
-      { name = 'nvim_lsp' },
-      { name = 'luasnip' },
-      { name = 'buffer' },
-    }
-
-    cmp.setup(opts)
-  end,
+  config = config,
 }

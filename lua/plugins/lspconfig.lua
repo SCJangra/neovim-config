@@ -27,7 +27,7 @@ local servers = {
   rust_analyzer = generic_setup,
 }
 
-local nvim_lspconfig = function ()
+local nvim_lspconfig = function()
   local lspconfig = require('lspconfig')
 
   for name, config in pairs(servers) do
