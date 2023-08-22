@@ -14,3 +14,6 @@ opt.clipboard = '' -- Reemove clipboard options
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.expandtab = true
+
+-- Set global status line
+opt.laststatus = 3
