@@ -1,7 +1,8 @@
 local opts = {
   colors = {
     onedark_vivid = {
-      bg = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')"
+      bg = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
+      comment = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
     }
   },
   styles = {
