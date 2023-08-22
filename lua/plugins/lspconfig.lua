@@ -24,6 +24,7 @@ end
 
 local servers = {
   lua_ls = generic_setup,
+  jsonls = generic_setup,
   rust_analyzer = generic_setup,
 }
 
@@ -36,27 +37,10 @@ local nvim_lspconfig = function()
 end
 
 return {
-  {
-    'neovim/nvim-lspconfig',
-    name = 'lspconfig',
-    -- For now this is lazy enough
-    event = 'BufReadPost',
-    dependencies = { 'mason-lspconfig', 'nvim-cmp' },
-    config = nvim_lspconfig
-  },
-
-  {
-    'williamboman/mason-lspconfig.nvim',
-    name = 'mason-lspconfig',
-    dependencies = 'mason',
-    opts = {
-      ensure_installed = vim.tbl_keys(servers)
-    }
-  },
-
-  {
-    'williamboman/mason.nvim',
-    name = 'mason',
-    config = true,
-  }
+  'neovim/nvim-lspconfig',
+  name = 'lspconfig',
+  -- For now this is lazy enough
+  event = 'BufReadPost',
+  dependencies = { 'nvim-cmp' },
+  config = nvim_lspconfig
 }
