@@ -17,3 +17,5 @@ opt.expandtab = true
 
 -- Set global status line
 opt.laststatus = 3
+
+opt.signcolumn = "yes"
