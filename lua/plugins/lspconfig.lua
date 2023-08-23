@@ -4,10 +4,7 @@ local buf = vim.lsp.buf
 local utils = require('utils')
 
 local generic_setup = function()
-  set('n', 'gd', buf.definition, { desc = 'LSP definition' })
   set('n', 'gD', buf.declaration, { desc = 'LSP declaration' })
-  set('n', 'gi', buf.implementation, { desc = 'LSP implementation' })
-  set('n', 'gr', buf.references, { desc = 'LSP references' })
   set('n', 'K', buf.hover, { desc = 'LSP hover' })
   set('n', '<leader>lr', buf.rename, { desc = 'Rename' })
   set('n', '<leader>la', buf.code_action, { desc = 'Code action' })
