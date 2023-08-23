@@ -5,7 +5,7 @@ return {
   event = 'VeryLazy',
   opts = {},
   init = function()
-    opt.timeout = ture
+    opt.timeout = true
     opt.timeoutlen = 300
   end
 }
