@@ -20,9 +20,12 @@ local opts = {
     TelescopePromptTitle   = { bg = '${red}', fg = '${bg}' },
     TelescopePreviewTitle  = { bg = '${green}', fg = '${bg}' },
     TelescopeSelection     = { bg = '${bg_lighter}', fg = '${purple}' },
-    TelescopePromptCounter = { bg = '${bg_lighter}', fg = '${gray}' }
+    TelescopePromptCounter = { bg = '${bg_lighter}', fg = '${gray}' },
+    CmpItemAbbr            = { fg = '${gray}' },
+    CmpItemAbbrMatch       = { fg = '${fg}', bold = true },
   },
 }
+
 
 return {
   'olimorris/onedarkpro.nvim',
