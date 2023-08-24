@@ -8,6 +8,7 @@
   "dressing.nvim": { "branch": "master", "commit": "ee571505f3566f84fd252e76c4ce6df6eaf2fb94" },
   "gitsigns.nvim": { "branch": "main", "commit": "749267aaa863c30d721c9913699c5d94e0c07dd3" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
+  "lsp_signature.nvim": { "branch": "master", "commit": "58d4e810801da74c29313da86075d6aea537501f" },
   "lspconfig": { "branch": "master", "commit": "27c59475ae610cc8ccbb81d9d7859e5ffbd4ec8a" },
   "lspkind.nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "80dc74d081823649809f78370fa5b204aa9a853a" },

@@ -15,7 +15,10 @@ local generic_setup = function()
 
   return {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    on_attach = utils.setup_auto_format
+    on_attach = function(client, bufnr)
+      utils.setup_auto_format(client, bufnr)
+      require('lsp_signature').on_attach(nil, bufnr)
+    end
   }
 end
 
@@ -38,6 +41,6 @@ return {
   name = 'lspconfig',
   -- For now this is lazy enough
   event = 'BufReadPost',
-  dependencies = { 'nvim-cmp' },
+  dependencies = { 'nvim-cmp', 'ray-x/lsp_signature.nvim' },
   config = nvim_lspconfig
 }

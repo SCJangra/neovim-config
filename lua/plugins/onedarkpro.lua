@@ -15,20 +15,24 @@ local opts = {
   },
   highlights = {
     -- Telescope
-    TelescopeBorder        = { bg = '${float_bg}', fg = '${float_bg}' },
-    TelescopePromptBorder  = { bg = '${bg_lighter}', fg = '${bg_lighter}' },
-    TelescopePromptNormal  = { bg = '${bg_lighter}', fg = '${fg}' },
-    TelescopePromptTitle   = { bg = '${red}', fg = '${bg}' },
-    TelescopePreviewTitle  = { bg = '${green}', fg = '${bg}' },
-    TelescopeSelection     = { bg = '${bg_lighter}', fg = '${purple}' },
-    TelescopePromptCounter = { bg = '${bg_lighter}', fg = '${gray}' },
+    TelescopeBorder             = { bg = '${float_bg}', fg = '${float_bg}' },
+    TelescopePromptBorder       = { bg = '${bg_lighter}', fg = '${bg_lighter}' },
+    TelescopePromptNormal       = { bg = '${bg_lighter}', fg = '${white}' },
+    TelescopePromptTitle        = { bg = '${red}', fg = '${bg}' },
+    TelescopePreviewTitle       = { bg = '${green}', fg = '${bg}' },
+    TelescopeSelection          = { bg = '${bg_lighter}', fg = '${purple}' },
+    TelescopePromptCounter      = { bg = '${bg_lighter}', fg = '${gray}' },
+    -- Pmenu
+    PmenuSel                    = { bg = '${green}', fg = '${bg}', bold = true },
     -- Cmp
-    CmpItemAbbr            = { fg = '${gray}' },
-    CmpItemAbbrMatch       = { fg = '${fg}', bold = true },
+    CmpItemAbbr                 = { fg = '${gray}' },
+    CmpItemAbbrMatch            = { fg = '${white}', bold = true },
     -- GitSigns
-    GitSignsAdd            = { fg = '${green}' },
-    GitSignsChange         = { fg = '${gray}' },
-    GitSignsDelete         = { fg = '${gray}' },
+    GitSignsAdd                 = { fg = '${green}' },
+    GitSignsChange              = { fg = '${gray}' },
+    GitSignsDelete              = { fg = '${gray}' },
+    -- Signature help
+    LspSignatureActiveParameter = { link = 'PmenuSel' }
   },
 }
 
