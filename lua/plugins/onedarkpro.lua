@@ -14,6 +14,7 @@ local opts = {
     functions    = 'bold',
   },
   highlights = {
+    -- Telescope
     TelescopeBorder        = { bg = '${float_bg}', fg = '${float_bg}' },
     TelescopePromptBorder  = { bg = '${bg_lighter}', fg = '${bg_lighter}' },
     TelescopePromptNormal  = { bg = '${bg_lighter}', fg = '${fg}' },
@@ -21,8 +22,13 @@ local opts = {
     TelescopePreviewTitle  = { bg = '${green}', fg = '${bg}' },
     TelescopeSelection     = { bg = '${bg_lighter}', fg = '${purple}' },
     TelescopePromptCounter = { bg = '${bg_lighter}', fg = '${gray}' },
+    -- Cmp
     CmpItemAbbr            = { fg = '${gray}' },
     CmpItemAbbrMatch       = { fg = '${fg}', bold = true },
+    -- GitSigns
+    GitSignsAdd            = { fg = '${green}' },
+    GitSignsChange         = { fg = '${gray}' },
+    GitSignsDelete         = { fg = '${gray}' },
   },
 }
 
