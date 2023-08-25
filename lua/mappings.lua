@@ -15,3 +15,7 @@ set('n', '<leader>w', '<CMD>w<CR>', { desc = 'Save file' })
 -- Switch tabs
 set('n', '<A-h>', '<CMD>tabprevious<CR>', { desc = 'Prev tab' })
 set('n', '<A-l>', '<CMD>tabnext<CR>', { desc = 'Next tab' })
+
+-- Package Managers
+set('n', '<leader>ps', '<CMD>Lazy show<CR>', { desc = 'Show packages' })
+set('n', '<leader>pS', '<CMD>Lazy sync<CR>', { desc = 'Sync packages' })
