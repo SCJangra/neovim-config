@@ -22,17 +22,21 @@ local opts = {
     TelescopePreviewTitle       = { bg = '${green}', fg = '${bg}' },
     TelescopeSelection          = { bg = '${bg_lighter}', fg = '${purple}' },
     TelescopePromptCounter      = { bg = '${bg_lighter}', fg = '${gray}' },
+
     -- Pmenu
     PmenuSel                    = { bg = '${green}', fg = '${bg}', bold = true },
+
     -- Cmp
     CmpItemAbbr                 = { fg = '${gray}' },
     CmpItemAbbrMatch            = { fg = '${white}', bold = true },
+
     -- GitSigns
     GitSignsAdd                 = { fg = '${green}' },
     GitSignsChange              = { fg = '${gray}' },
     GitSignsDelete              = { fg = '${gray}' },
+
     -- Signature help
-    LspSignatureActiveParameter = { link = 'PmenuSel' }
+    LspSignatureActiveParameter = { link = 'PmenuSel' },
   },
 }
 
