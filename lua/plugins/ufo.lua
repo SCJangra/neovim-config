@@ -37,7 +37,7 @@ local init = function()
   o.foldcolumn = '1' -- '0' is not bad
 end
 
-vim.api.nvim_create_autocmd('BufEnter', { command = 'UfoAttach' })
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'InsertEnter' }, { command = 'UfoAttach' })
 
 return {
   'kevinhwang91/nvim-ufo',
