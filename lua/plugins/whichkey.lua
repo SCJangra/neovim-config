@@ -2,7 +2,7 @@ local opt = vim.opt
 
 return {
   'folke/which-key.nvim',
-  event = 'VeryLazy',
+  keys = { '<leader>', '<NOP>' },
   opts = {},
   init = function()
     opt.timeout = true
