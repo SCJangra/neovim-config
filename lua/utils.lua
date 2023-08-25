@@ -25,4 +25,14 @@ M.setup_auto_format = function(client, bufnr)
   end
 end
 
+M.tbl_contains_match = function(tbl, str)
+  for _, m in ipairs(tbl) do
+    local sub = str:sub(1, #m)
+
+    if sub == m then return true end
+  end
+
+  return false
+end
+
 return M

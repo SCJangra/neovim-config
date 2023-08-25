@@ -19,3 +19,5 @@ opt.expandtab = true
 opt.laststatus = 3
 
 opt.signcolumn = "yes"
+
+g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help' }
