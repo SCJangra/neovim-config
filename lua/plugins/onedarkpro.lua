@@ -13,12 +13,10 @@ local opts = {
     functions    = 'bold',
   },
   highlights = {
-    CursorLine                  = { bg = '${cursorline}', fg = '${white}' },
-
     -- Telescope
     TelescopeBorder             = { bg = '${float_bg}', fg = '${float_bg}' },
     TelescopePromptBorder       = { bg = '${cursorline}', fg = '${cursorline}' },
-    TelescopePromptNormal       = { link = 'CursorLine' },
+    TelescopePromptNormal       = { bg = '${cursorline}' },
     TelescopePromptTitle        = { bg = '${red}', fg = '${bg}' },
     TelescopePreviewTitle       = { bg = '${green}', fg = '${bg}' },
     TelescopeSelection          = { bg = '${cursorline}', fg = '${purple}' },
@@ -42,9 +40,16 @@ local opts = {
     LspSignatureActiveParameter = { link = 'PmenuSel' },
 
     -- FloatingWindows
-    FloatTitle                  = { link = 'CursorLine' },
+    FloatTitle                  = { bg = '${cursorline}', bold = true },
     FloatBorder                 = { bg = '${float_bg}', fg = '${cursorline}' },
-    FloatBorderBottom           = { bg = '${bg}', fg = '${cursorline}' }
+    FloatBorderBottom           = { bg = '${bg}', fg = '${cursorline}' },
+
+    -- NeoTree
+    NeoTreeNormal               = { bg = '${cursorline}' },
+    NeoTreeNormalNC             = { link = 'NeoTreeNormal' },
+    NeoTreeWinSeparator         = { fg = '${bg}' },
+    NeoTreeTabActive            = { bg = '${cursorline}', bold = true },
+    NeoTreeTabSeparatorActive   = { bg = '${cursorline}', fg = '#0a0a0a' },
   },
 }
 
