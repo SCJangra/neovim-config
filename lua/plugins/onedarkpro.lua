@@ -26,6 +26,7 @@ local opts = {
 
     -- Pmenu
     PmenuSel                    = { bg = '${green}', fg = '${bg}', bold = true },
+    PMenuThumb                  = { bg = '${bg_light}' },
 
     -- Cmp
     CmpItemAbbr                 = { fg = '${gray}' },
