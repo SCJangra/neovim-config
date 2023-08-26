@@ -23,6 +23,7 @@ local opts = {
     TelescopePreviewTitle       = { bg = '${green}', fg = '${bg}' },
     TelescopeSelection          = { bg = '${cursorline}', fg = '${purple}' },
     TelescopePromptCounter      = { bg = '${cursorline}', fg = '${gray}' },
+    TelescopeMatching           = { bold = true, underline = true },
 
     -- Pmenu
     PmenuSel                    = { bg = '${green}', fg = '${bg}', bold = true },
