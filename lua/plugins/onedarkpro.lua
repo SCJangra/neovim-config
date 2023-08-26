@@ -1,9 +1,9 @@
 local opts = {
   colors = {
     onedark_vivid = {
-      bg         = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
-      bg_lighter = "require('onedarkpro.helpers').darken('gray', 28, 'onedark_vivid')",
-      comment    = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
+      bg       = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
+      bg_light = "require('onedarkpro.helpers').darken('gray', 28, 'onedark_vivid')",
+      comment  = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
     }
   },
   styles = {
@@ -16,12 +16,12 @@ local opts = {
   highlights = {
     -- Telescope
     TelescopeBorder             = { bg = '${float_bg}', fg = '${float_bg}' },
-    TelescopePromptBorder       = { bg = '${bg_lighter}', fg = '${bg_lighter}' },
-    TelescopePromptNormal       = { bg = '${bg_lighter}', fg = '${white}' },
+    TelescopePromptBorder       = { bg = '${bg_light}', fg = '${bg_light}' },
+    TelescopePromptNormal       = { bg = '${bg_light}', fg = '${white}' },
     TelescopePromptTitle        = { bg = '${red}', fg = '${bg}' },
     TelescopePreviewTitle       = { bg = '${green}', fg = '${bg}' },
-    TelescopeSelection          = { bg = '${bg_lighter}', fg = '${purple}' },
-    TelescopePromptCounter      = { bg = '${bg_lighter}', fg = '${gray}' },
+    TelescopeSelection          = { bg = '${bg_light}', fg = '${purple}' },
+    TelescopePromptCounter      = { bg = '${bg_light}', fg = '${gray}' },
 
     -- Pmenu
     PmenuSel                    = { bg = '${green}', fg = '${bg}', bold = true },
