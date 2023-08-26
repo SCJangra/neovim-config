@@ -1,8 +1,9 @@
 local opts = {
   colors = {
     onedark_vivid = {
-      bg      = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
-      comment = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
+      bg       = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
+      bg_light = "require('onedarkpro.helpers').lighten('bg', 8, 'onedark_vivid')",
+      comment  = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
     }
   },
   styles = {
@@ -13,6 +14,8 @@ local opts = {
     functions    = 'bold',
   },
   highlights = {
+    CursorLine                  = { bg = '${cursorline}' },
+
     -- Telescope
     TelescopeBorder             = { bg = '${float_bg}', fg = '${float_bg}' },
     TelescopePromptBorder       = { bg = '${cursorline}', fg = '${cursorline}' },
@@ -40,15 +43,16 @@ local opts = {
     LspSignatureActiveParameter = { link = 'PmenuSel' },
 
     -- FloatingWindows
-    FloatTitle                  = { bg = '${cursorline}', bold = true },
-    FloatBorder                 = { bg = '${float_bg}', fg = '${cursorline}' },
-    FloatBorderBottom           = { bg = '${bg}', fg = '${cursorline}' },
+    FloatTitle                  = { bg = '${bg_light}', bold = true },
+    FloatBorder                 = { bg = '${float_bg}', fg = '${bg_light}' },
+    FloatBorderBottom           = { bg = '${bg}', fg = '${bg_light}' },
+    FloatBorderBottomAlt        = { bg = '${cursorline}', fg = '${bg_light}' },
 
     -- NeoTree
     NeoTreeNormal               = { bg = '${cursorline}' },
     NeoTreeNormalNC             = { link = 'NeoTreeNormal' },
     NeoTreeWinSeparator         = { fg = '${bg}' },
-    NeoTreeTabActive            = { bg = '${cursorline}', bold = true },
+    NeoTreeTabActive            = { bg = '${cursorline}', bold = true, italic = true },
     NeoTreeTabSeparatorActive   = { bg = '${cursorline}', fg = '#0a0a0a' },
   },
 }
