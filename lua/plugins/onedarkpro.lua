@@ -1,9 +1,10 @@
 local opts = {
   colors = {
     onedark_vivid = {
-      bg       = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
-      bg_light = "require('onedarkpro.helpers').darken('gray', 28, 'onedark_vivid')",
-      comment  = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
+      bg         = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
+      bg_light   = "require('onedarkpro.helpers').darken('gray', 28, 'onedark_vivid')",
+      bg_lighter = "require('onedarkpro.helpers').darken('gray', 25, 'onedark_vivid')",
+      comment    = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
     }
   },
   styles = {
@@ -37,6 +38,11 @@ local opts = {
 
     -- Signature help
     LspSignatureActiveParameter = { link = 'PmenuSel' },
+
+    -- FloatingWindows
+    FloatTitle                  = { bg = '${bg_lighter}', fg = '${white}' },
+    FloatBorder                 = { bg = '${float_bg}', fg = '${bg_lighter}' },
+    FloatBorderBottom           = { bg = '${bg}', fg = '${bg_lighter}' }
   },
 }
 
