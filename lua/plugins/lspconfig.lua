@@ -23,7 +23,10 @@ local generic_setup = function()
 end
 
 local servers = {
-  lua_ls = generic_setup,
+  lua_ls = function()
+    require('neodev').setup {}
+    return generic_setup()
+  end,
   jsonls = generic_setup,
   rust_analyzer = generic_setup,
 }
@@ -41,6 +44,10 @@ return {
   name = 'lspconfig',
   -- For now this is lazy enough
   event = 'BufReadPost',
-  dependencies = { 'nvim-cmp', 'ray-x/lsp_signature.nvim' },
+  dependencies = {
+    'nvim-cmp',
+    'ray-x/lsp_signature.nvim',
+    'folke/neodev.nvim',
+  },
   config = nvim_lspconfig
 }
