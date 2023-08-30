@@ -1,4 +1,6 @@
 local set = vim.keymap.set
+local ui = vim.ui
+local api = vim.api
 
 -- Window movement
 set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
@@ -19,3 +21,23 @@ set('n', '<A-l>', '<CMD>tabnext<CR>', { desc = 'Next tab' })
 -- Package Managers
 set('n', '<leader>ps', '<CMD>Lazy show<CR>', { desc = 'Show packages' })
 set('n', '<leader>pS', '<CMD>Lazy sync<CR>', { desc = 'Sync packages' })
+
+-- Run commands in terminal
+local command = ''
+local term_command = function()
+  vim.ui.input({ prompt = 'Enber command:', default = command, center = true }, function(input)
+    if not input or input == '' then
+      return
+    end
+
+    command = input
+
+    vim.api.nvim_command('terminal ' .. command)
+  end)
+end
+set('n', '<leader>x', term_command, { desc = 'Terminal command' })
+
+-- Copy/Paste
+set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to clipboard' })
+set({ 'n', 'v' }, '<leader>p', '"+p', { desc = 'Paste after from clipboard' })
+set({ 'n', 'v' }, '<leader>P', '"+P', { desc = 'Paste before from clipboard' })
