@@ -1,9 +1,8 @@
 local opts = {
   colors = {
     onedark_vivid = {
-      bg       = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
-      bg_light = "require('onedarkpro.helpers').lighten('bg', 8, 'onedark_vivid')",
-      comment  = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
+      bg      = "require('onedarkpro.helpers').darken('bg', 8, 'onedark_vivid')",
+      comment = "require('onedarkpro.helpers').darken('comment', 20, 'onedark_vivid')",
     }
   },
   styles = {
@@ -43,10 +42,10 @@ local opts = {
     LspSignatureActiveParameter = { link = 'PmenuSel' },
 
     -- FloatingWindows
-    FloatTitle                  = { bg = '${bg_light}', bold = true },
-    FloatBorder                 = { bg = '${float_bg}', fg = '${bg_light}' },
-    FloatBorderBottom           = { bg = '${bg}', fg = '${bg_light}' },
-    FloatBorderBottomAlt        = { bg = '${cursorline}', fg = '${bg_light}' },
+    FloatTitle                  = { bg = '${red}', fg = '${bg}', bold = true },
+    FloatBorder                 = { bg = '${float_bg}', fg = '${red}' },
+    FloatBorderBottom           = { bg = '${bg}', fg = '${red}' },
+    FloatBorderBottomAlt        = { bg = '${cursorline}', fg = '${red}' },
 
     -- NeoTree
     NeoTreeNormal               = { bg = '${cursorline}' },
