@@ -22,8 +22,9 @@ opt.signcolumn = "yes"
 
 g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help' }
 
--- Diagnostics 🦀
+-- Diagnostics
 vim.fn.sign_define('DiagnosticSignError', { text = '🦀', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn', linehl = 'DiagnosticSignWarn' })
 vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo', linehl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = '󰛨 ', texthl = 'DiagnosticSignHint', linehl = 'DiagnosticSignHint' })
+vim.diagnostic.config { severity_sort = true }
