@@ -53,6 +53,31 @@ local opts = {
     NeoTreeWinSeparator         = { fg = '${bg}' },
     NeoTreeTabActive            = { bg = '${cursorline}', bold = true, italic = true },
     NeoTreeTabSeparatorActive   = { bg = '${cursorline}', fg = '#0a0a0a' },
+
+    -- Diagnostics
+    DiagnosticSignOk            = { link = 'DiagnosticOk' },
+    DiagnosticSignHint          = { link = 'DiagnosticHint' },
+    DiagnosticSignInfo          = { link = 'DiagnosticInfo' },
+    DiagnosticSignWarn          = { link = 'DiagnosticWarn' },
+    DiagnosticSignError         = { link = 'DiagnosticError' },
+
+    DiagnosticFloatingOk        = { link = 'DiagnosticOk' },
+    DiagnosticFloatingHint      = { link = 'DiagnosticHint' },
+    DiagnosticFloatingInfo      = { link = 'DiagnosticInfo' },
+    DiagnosticFloatingWarn      = { link = 'DiagnosticWarn' },
+    DiagnosticFloatingError     = { link = 'DiagnosticError' },
+
+    -- DiagnosticUnderlineOk       = {},
+    -- DiagnosticUnderlineHint     = { underdotted = true },
+    -- DiagnosticUnderlineInfo     = { underdashed = true },
+    -- DiagnosticUnderlineWarn     = { underline = true },
+    -- DiagnosticUnderlineError    = { undercurl = true },
+
+    DiagnosticVirtualTextOk     = { link = 'DiagnosticOk' },
+    DiagnosticVirtualTextHint   = { link = 'DiagnosticHint' },
+    DiagnosticVirtualTextInfo   = { link = 'DiagnosticInfo' },
+    DiagnosticVirtualTextWarn   = { link = 'DiagnosticWarn' },
+    DiagnosticVirtualTextError  = { link = 'DiagnosticError' },
   },
 }
 
