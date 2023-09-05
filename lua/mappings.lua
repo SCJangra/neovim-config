@@ -19,8 +19,8 @@ set('n', '<A-h>', '<CMD>tabprevious<CR>', { desc = 'Prev tab' })
 set('n', '<A-l>', '<CMD>tabnext<CR>', { desc = 'Next tab' })
 
 -- Package Managers
-set('n', '<leader>ps', '<CMD>Lazy show<CR>', { desc = 'Show packages' })
-set('n', '<leader>pS', '<CMD>Lazy sync<CR>', { desc = 'Sync packages' })
+set('n', '<leader>Ls', '<CMD>Lazy show<CR>', { desc = 'Show packages' })
+set('n', '<leader>LS', '<CMD>Lazy sync<CR>', { desc = 'Sync packages' })
 
 -- Run commands in terminal
 local command = ''
