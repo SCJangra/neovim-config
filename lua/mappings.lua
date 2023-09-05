@@ -41,3 +41,7 @@ set('n', '<leader>x', term_command, { desc = 'Terminal command' })
 set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to clipboard' })
 set({ 'n', 'v' }, '<leader>p', '"+p', { desc = 'Paste after from clipboard' })
 set({ 'n', 'v' }, '<leader>P', '"+P', { desc = 'Paste before from clipboard' })
+
+-- Quick fix
+set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Next quick fix item' })
+set('n', '<C-p>', '<CMD>cprevious<CR>', { desc = 'Previous quick fix item' })
