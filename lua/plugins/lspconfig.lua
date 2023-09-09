@@ -32,6 +32,7 @@ local servers = {
   end,
   jsonls = generic_setup,
   rust_analyzer = generic_setup,
+  tsserver = generic_setup,
 }
 
 local nvim_lspconfig = function()
