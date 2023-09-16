@@ -13,6 +13,7 @@ set('n', '<leader>c', '<CMD>bd<CR>', { desc = 'Close buffer' })
 set('n', '<leader>h', '<CMD>noh<CR>', { desc = 'Clear highlight' })
 set('n', '<leader>q', '<CMD>q<CR>', { desc = 'Close window' })
 set('n', '<leader>w', '<CMD>w<CR>', { desc = 'Save file' })
+set('n', 'U', '<C-r>', { desc = 'Redo'})
 
 -- Switch tabs
 set('n', '<A-h>', '<CMD>tabprevious<CR>', { desc = 'Prev tab' })
