@@ -2,6 +2,7 @@ local set = vim.keymap.set
 local diagnostic = vim.diagnostic
 local buf = vim.lsp.buf
 local utils = require('utils')
+local settings = require('plugins.lspconfig.settings')
 
 local setup_keymspa = function(bufnr)
   set('n', 'gD', buf.declaration, { buffer = bufnr, desc = 'LSP declaration' })
@@ -14,21 +15,22 @@ local setup_keymspa = function(bufnr)
   set('n', '<leader>lR', '<CMD>LspRestart<CR>', { buffer = bufnr, desc = 'Restart' })
 end
 
-local generic_setup = function()
+local generic_setup = function(name)
   return {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     on_attach = function(client, bufnr)
       setup_keymspa(bufnr)
       utils.setup_auto_format(client, bufnr)
       require('lsp_signature').on_attach(nil, bufnr)
-    end
+    end,
+    settings = settings[name],
   }
 end
 
 local servers = {
-  lua_ls = function()
+  lua_ls = function(name)
     require('neodev').setup {}
-    return generic_setup()
+    return generic_setup(name)
   end,
   jsonls = generic_setup,
   rust_analyzer = generic_setup,
@@ -40,7 +42,7 @@ local nvim_lspconfig = function()
   local lspconfig = require('lspconfig')
 
   for name, config in pairs(servers) do
-    lspconfig[name].setup(config() or {})
+    lspconfig[name].setup(config(name) or {})
   end
 end
 
