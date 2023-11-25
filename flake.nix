@@ -10,7 +10,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ gcc lua-language-server ];
+        packages = with pkgs; [ gcc lua-language-server cargo rustc ];
       };
     });
 }
