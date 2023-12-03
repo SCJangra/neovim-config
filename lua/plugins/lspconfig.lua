@@ -36,6 +36,7 @@ local servers = {
   rust_analyzer = generic_setup,
   tsserver = generic_setup,
   nil_ls = generic_setup,
+  cssls = generic_setup,
 }
 
 local nvim_lspconfig = function()
