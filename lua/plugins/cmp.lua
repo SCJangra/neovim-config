@@ -29,6 +29,7 @@ local config = function(_, opts)
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
+    { name = 'crates' },
   }
 
   opts.mapping = cmp.mapping.preset.insert {
