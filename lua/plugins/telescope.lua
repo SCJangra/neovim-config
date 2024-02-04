@@ -1,3 +1,5 @@
+local utils = require('utils')
+
 local opts = {
   extensions      = {
     fzf = {
@@ -45,6 +47,15 @@ local keys = {
       end)
     end,
     desc = 'Grep string'
+  },
+  {
+    '<leader>sv',
+    function()
+      local text = utils.visual_text()
+      require('telescope.builtin').grep_string { search = text }
+    end,
+    desc = 'Grep visual',
+    mode = 'v',
   }
 }
 

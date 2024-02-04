@@ -1,3 +1,6 @@
+local api = vim.api
+local fn = vim.fn
+
 local format = true
 
 local M = {}
@@ -33,6 +36,18 @@ M.tbl_contains_match = function(tbl, str)
   end
 
   return false
+end
+
+M.visual_text = function()
+  local mode = vim.fn.mode()
+
+  if mode ~= 'v' and mode ~= 'V' then
+    api.nvim_command('gv')
+  end
+
+  api.nvim_command('"vy')
+
+  fn.getreg('v')
 end
 
 return M
