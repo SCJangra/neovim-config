@@ -1,5 +1,6 @@
 local api = vim.api
 local fn = vim.fn
+local opt = vim.opt
 
 local format = true
 
@@ -48,6 +49,23 @@ M.visual_text = function()
   api.nvim_command('"vy')
 
   fn.getreg('v')
+end
+
+M.update_font_size = function(val)
+  local all_fonts = opt.guifont:get()
+  local len = #all_fonts
+
+  local last_font = all_fonts[len]
+  local parts = vim.split(last_font, ':h')
+  parts[2] = parts[2] + val
+
+  if parts[2] < 0 then return end
+
+  last_font = table.concat(parts, ':h')
+
+  all_fonts[len] = last_font
+
+  opt.guifont = all_fonts
 end
 
 return M

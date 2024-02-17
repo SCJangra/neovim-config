@@ -4,7 +4,7 @@ local opt, g = vim.opt, vim.g
 g.mapleader = ','
 
 opt.number = true
-opt.guifont = 'IosevkaSCJ Nerd Font:h14'
+opt.guifont = 'Iosevka SCJ:h14'
 opt.whichwrap = '<,>,[,],b,s'
 opt.scrolloff = 10
 opt.conceallevel = 2
@@ -21,6 +21,15 @@ opt.laststatus = 3
 opt.signcolumn = "yes"
 
 g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help' }
+
+-- Neovide
+if g.neovide then
+  opt.guifont = { 'Iosevka SCJ', 'Symbols Nerd Font:h14' }
+  g.neovide_scroll_animation_length = 0.1
+  g.neovide_cursor_animation_length = 0.1
+  g.neovide_transparency = 1
+  g.neovide_floating_shadow = false
+end
 
 -- Diagnostics
 vim.fn.sign_define('DiagnosticSignError', { text = '🦀', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError' })
