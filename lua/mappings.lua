@@ -29,7 +29,7 @@ set('n', '<leader>LS', '<CMD>Lazy sync<CR>', { desc = 'Sync packages' })
 -- Run commands in terminal
 local command = ''
 local term_command = function()
-  ui.input({ prompt = 'Enber command:', default = command, center = true }, function(input)
+  ui.input({ prompt = 'Enter command:', default = command, center = true }, function(input)
     if not input or input == '' then
       return
     end
