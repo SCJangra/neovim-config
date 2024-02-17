@@ -13,7 +13,7 @@ local keys = {
 return {
   'akinsho/bufferline.nvim',
   event = 'BufReadPost',
-  dependencies = 'nvim-tree/nvim-web-devicons',
+  dependencies = { 'nvim-tree/nvim-web-devicons', 'tiagovla/scope.nvim' },
   keys = keys,
   opts = opts,
 }
