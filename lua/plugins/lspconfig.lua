@@ -1,8 +1,7 @@
 local set = vim.keymap.set
 local diagnostic = vim.diagnostic
 local buf = vim.lsp.buf
-local utils = require('utils')
-local settings = require('plugins.lspconfig.settings')
+local settings = require 'plugins.lspconfig.settings'
 
 local setup_keymspa = function(bufnr)
   set('n', 'gD', buf.declaration, { buffer = bufnr, desc = 'LSP declaration' })
@@ -18,11 +17,7 @@ end
 local generic_setup = function(name)
   return {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    on_attach = function(client, bufnr)
-      setup_keymspa(bufnr)
-      utils.setup_auto_format(client, bufnr)
-      -- require('lsp_signature').on_attach(nil, bufnr)
-    end,
+    on_attach = function(_, bufnr) setup_keymspa(bufnr) end,
     settings = settings[name],
   }
 end
@@ -41,7 +36,7 @@ local servers = {
 }
 
 local nvim_lspconfig = function()
-  local lspconfig = require('lspconfig')
+  local lspconfig = require 'lspconfig'
 
   for name, config in pairs(servers) do
     lspconfig[name].setup(config(name) or {})
@@ -55,8 +50,7 @@ return {
   event = 'BufReadPost',
   dependencies = {
     'nvim-cmp',
-    -- 'ray-x/lsp_signature.nvim',
     'folke/neodev.nvim',
   },
-  config = nvim_lspconfig
+  config = nvim_lspconfig,
 }
