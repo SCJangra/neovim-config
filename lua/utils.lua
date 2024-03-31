@@ -68,4 +68,21 @@ M.update_font_size = function(val)
   opt.guifont = all_fonts
 end
 
+M.invert_color = function(color)
+  local red = tonumber(string.sub(color, 2, 3), 16)
+  local green = tonumber(string.sub(color, 4, 5), 16)
+  local blue = tonumber(string.sub(color, 6, 7), 16)
+
+  red = red * -1 + 255
+  green = green * -1 + 255
+  blue = blue * -1 + 255
+
+  return table.concat({
+    '#',
+    string.format('%x', red),
+    string.format('%x', green),
+    string.format('%x', blue),
+  })
+end
+
 return M
