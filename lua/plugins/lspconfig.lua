@@ -21,7 +21,7 @@ local generic_setup = function(name)
     on_attach = function(client, bufnr)
       setup_keymspa(bufnr)
       utils.setup_auto_format(client, bufnr)
-      require('lsp_signature').on_attach(nil, bufnr)
+      -- require('lsp_signature').on_attach(nil, bufnr)
     end,
     settings = settings[name],
   }
@@ -55,7 +55,7 @@ return {
   event = 'BufReadPost',
   dependencies = {
     'nvim-cmp',
-    'ray-x/lsp_signature.nvim',
+    -- 'ray-x/lsp_signature.nvim',
     'folke/neodev.nvim',
   },
   config = nvim_lspconfig

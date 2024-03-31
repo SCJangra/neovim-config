@@ -18,6 +18,9 @@ opt.expandtab = true
 -- Set global status line
 opt.laststatus = 3
 
+-- Cmdline
+opt.cmdheight = 0
+
 opt.signcolumn = "yes"
 
 g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help' }
