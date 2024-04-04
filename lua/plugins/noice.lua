@@ -9,7 +9,7 @@ local opts = {
   views = {
     cmdline_popup = {
       position = { row = 5, col = '50%' },
-      size = { width = 60, height = 'auto' }
+      size = { width = 60, height = 'auto' },
     },
     popupmenu = {
       relative = 'editor',
@@ -17,10 +17,10 @@ local opts = {
       position = { row = 8, col = '50%' },
       size = { width = 60, height = 10 },
       win_options = {
-        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+        winhighlight = { Normal = 'Normal', FloatBorder = 'DiagnosticInfo' },
       },
     },
-  }
+  },
 }
 
 return {
