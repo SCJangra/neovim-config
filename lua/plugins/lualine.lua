@@ -1,3 +1,16 @@
+local reg_recording = vim.fn.reg_recording
+
+local recording = function()
+  local icon = '󰄄 ' -- 󰟞 
+  local reg = reg_recording()
+
+  if reg == '' then
+    return reg
+  else
+    return icon .. reg .. ' '
+  end
+end
+
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = 'nvim-tree/nvim-web-devicons',
@@ -19,6 +32,11 @@ return {
         lualine_a = {
           {
             'mode',
+            color = { gui = 'bold' },
+          },
+          {
+            recording,
+            padding = { left = 0 },
             color = { gui = 'bold' },
           },
         },
