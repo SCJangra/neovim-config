@@ -9,8 +9,14 @@ local opts = {
 
 return {
   'NeogitOrg/neogit',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'sindrets/diffview.nvim',
+    'nvim-telescope/telescope.nvim',
+  },
+  branch = 'nightly',
   opts = opts,
   keys = {
-    { '<leader>g', '<CMD>lua require("neogit").open()<CR>', desc = 'Neogit' }
-  }
+    { '<leader>g', '<CMD>lua require("neogit").open()<CR>', desc = 'Neogit' },
+  },
 }
