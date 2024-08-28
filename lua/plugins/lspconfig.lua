@@ -24,7 +24,14 @@ end
 
 local servers = {
   lua_ls = function(name)
-    require('neodev').setup {}
+    require('neodev').setup {
+      override = function(_, options)
+        options.enabled = true;
+        options.runtime = true;
+        options.types = true;
+        options.plugins = true;
+      end
+    }
     return generic_setup(name)
   end,
   jsonls = generic_setup,
