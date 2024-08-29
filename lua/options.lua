@@ -4,7 +4,6 @@ local opt, g = vim.opt, vim.g
 g.mapleader = ','
 
 opt.number = true
-opt.guifont = 'Iosevka SCJ:h14'
 opt.whichwrap = '<,>,[,],b,s'
 opt.scrolloff = 10
 opt.conceallevel = 2
@@ -23,7 +22,7 @@ opt.cmdheight = 0
 
 opt.signcolumn = "yes"
 
-g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help' }
+g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help', 'noice', 'Telescope' }
 
 -- Neovide
 if g.neovide then
