@@ -28,7 +28,7 @@ g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help', 'noice', 'Telescope' }
 if g.neovide then
   opt.guifont = { 'Iosevka SCJ', 'Symbols Nerd Font:h14' }
   g.neovide_scroll_animation_length = 0.1
-  g.neovide_cursor_animation_length = 0.1
+  g.neovide_position_animation_length = 0.1
   g.neovide_transparency = 1
   g.neovide_floating_shadow = false
 end
