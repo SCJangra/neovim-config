@@ -36,7 +36,7 @@ local servers = {
   end,
   jsonls = generic_setup,
   rust_analyzer = generic_setup,
-  tsserver = generic_setup,
+  ts_ls = generic_setup,
   nil_ls = generic_setup,
   cssls = generic_setup,
   wgsl_analyzer = generic_setup,
