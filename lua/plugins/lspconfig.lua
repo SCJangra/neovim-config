@@ -35,6 +35,7 @@ local servers = {
     return generic_setup(name)
   end,
   jsonls = generic_setup,
+  html = generic_setup,
   rust_analyzer = generic_setup,
   ts_ls = generic_setup,
   nil_ls = generic_setup,
