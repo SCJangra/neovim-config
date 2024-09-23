@@ -15,7 +15,6 @@ opt.tabstop = 2
 opt.expandtab = true
 
 opt.spelllang = 'en_us'
-opt.spell = true
 
 -- Set global status line
 opt.laststatus = 3
