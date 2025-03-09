@@ -1,7 +1,6 @@
 local set = vim.keymap.set
 local buf = vim.lsp.buf
 local diagnostic = vim.diagnostic
-local settings = require 'plugins.lspconfig.settings'
 
 local M = {}
 
@@ -16,11 +15,10 @@ M.setup_keymspa = function(bufnr)
   set('n', '<leader>lR', '<CMD>LspRestart<CR>', { buffer = bufnr, desc = 'Restart' })
 end
 
-M.generic_setup = function(name)
+M.generic_setup = function(_)
   return {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     on_attach = function(_, bufnr) M.setup_keymspa(bufnr) end,
-    settings = settings[name],
   }
 end
 

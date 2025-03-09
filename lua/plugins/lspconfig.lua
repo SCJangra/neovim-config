@@ -22,6 +22,8 @@ local servers = {
 }
 
 local nvim_lspconfig = function()
+  require('neoconf').setup {}
+
   local lspconfig = require 'lspconfig'
 
   for name, config in pairs(servers) do
@@ -37,6 +39,7 @@ return {
   dependencies = {
     'nvim-cmp',
     'folke/neodev.nvim',
+    'folke/neoconf.nvim',
   },
   config = nvim_lspconfig,
 }
