@@ -1,7 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
@@ -10,7 +12,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ gcc lua-language-server cargo rustc cmake ];
+        packages = with pkgs; [ lua-language-server nil vscode-langservers-extracted ];
       };
     });
 }
