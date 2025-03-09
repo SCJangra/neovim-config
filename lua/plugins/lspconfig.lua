@@ -1,26 +1,4 @@
-local set = vim.keymap.set
-local diagnostic = vim.diagnostic
-local buf = vim.lsp.buf
-local settings = require 'plugins.lspconfig.settings'
-
-local setup_keymspa = function(bufnr)
-  set('n', 'gD', buf.declaration, { buffer = bufnr, desc = 'LSP declaration' })
-  set('n', 'K', buf.hover, { buffer = bufnr, desc = 'LSP hover' })
-  set('n', '<leader>lr', buf.rename, { buffer = bufnr, desc = 'Rename' })
-  set('n', '<leader>la', buf.code_action, { buffer = bufnr, desc = 'Code action' })
-  set('n', '<leader>ll', diagnostic.open_float, { buffer = bufnr, desc = 'Show line diagnostic' })
-  set('n', '<leader>lj', diagnostic.goto_next, { buffer = bufnr, desc = 'Next diagnostic' })
-  set('n', '<leader>lk', diagnostic.goto_next, { buffer = bufnr, desc = 'Prev diagnostic' })
-  set('n', '<leader>lR', '<CMD>LspRestart<CR>', { buffer = bufnr, desc = 'Restart' })
-end
-
-local generic_setup = function(name)
-  return {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    on_attach = function(_, bufnr) setup_keymspa(bufnr) end,
-    settings = settings[name],
-  }
-end
+local lsp_utils = require('utils.lsp')
 
 local servers = {
   lua_ls = function(name)
@@ -32,15 +10,15 @@ local servers = {
         options.plugins = true;
       end
     }
-    return generic_setup(name)
+    return lsp_utils.generic_setup(name)
   end,
-  jsonls = generic_setup,
-  html = generic_setup,
-  rust_analyzer = generic_setup,
-  ts_ls = generic_setup,
-  nil_ls = generic_setup,
-  cssls = generic_setup,
-  wgsl_analyzer = generic_setup,
+  jsonls = lsp_utils.generic_setup,
+  html = lsp_utils.generic_setup,
+  rust_analyzer = lsp_utils.generic_setup,
+  ts_ls = lsp_utils.generic_setup,
+  nil_ls = lsp_utils.generic_setup,
+  cssls = lsp_utils.generic_setup,
+  wgsl_analyzer = lsp_utils.generic_setup,
 }
 
 local nvim_lspconfig = function()
