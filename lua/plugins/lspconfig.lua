@@ -37,7 +37,7 @@ return {
   -- For now this is lazy enough
   event = 'BufReadPost',
   dependencies = {
-    'nvim-cmp',
+    'saghen/blink.cmp',
     'folke/neodev.nvim',
     'folke/neoconf.nvim',
   },
