@@ -12,7 +12,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ lua-language-server nil vscode-langservers-extracted ];
+        packages = with pkgs; [ lua-language-server nil vscode-langservers-extracted rustup ];
       };
     });
 }
