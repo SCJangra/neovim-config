@@ -2,6 +2,7 @@ local opt, g = vim.opt, vim.g
 
 -- Mapleader MUST be set before loading mappings
 g.mapleader = ','
+g.maplocalleader = ','
 
 opt.number = true
 opt.whichwrap = '<,>,[,],b,s'
@@ -13,6 +14,18 @@ opt.clipboard = '' -- Reemove clipboard options
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.expandtab = true
+opt.breakindent = true
+
+-- Undo
+opt.undofile = true
+
+-- Search
+opt.ignorecase = true
+opt.smartcase = true
+
+-- How new splits should open
+opt.splitright = true
+opt.splitbelow = true
 
 opt.spelllang = 'en_us'
 
@@ -23,6 +36,17 @@ opt.laststatus = 3
 opt.cmdheight = 0
 
 opt.signcolumn = "yes"
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+opt.confirm = true
+
+-- Decrease update time
+opt.updatetime = 250
+
+-- Decrease mapped sequence wait time
+opt.timeoutlen = 300
 
 g.fold_ignore_ft = { 'neo-tree', 'Neogit', 'help', 'noice', 'Telescope' }
 
@@ -36,8 +60,14 @@ if g.neovide then
 end
 
 -- Diagnostics
-vim.fn.sign_define('DiagnosticSignError', { text = '🦀', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn', linehl = 'DiagnosticSignWarn' })
-vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo', linehl = 'DiagnosticSignInfo' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '󰛨 ', texthl = 'DiagnosticSignHint', linehl = 'DiagnosticSignHint' })
-vim.diagnostic.config { severity_sort = true }
+vim.diagnostic.config {
+  severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = ' ',
+      [vim.diagnostic.severity.WARN] = ' ',
+      [vim.diagnostic.severity.INFO] = ' ',
+      [vim.diagnostic.severity.HINT] = '󰛨 ',
+    }
+  }
+}
