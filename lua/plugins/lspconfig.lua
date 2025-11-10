@@ -1,15 +1,10 @@
+local lsp = vim.lsp
+
 local lsp_utils = require('utils.lsp')
 
 local servers = {
   lua_ls = function(name)
-    require('neodev').setup {
-      override = function(_, options)
-        options.enabled = true;
-        options.runtime = true;
-        options.types = true;
-        options.plugins = true;
-      end
-    }
+    require('lazydev').setup {}
     return lsp_utils.generic_setup(name)
   end,
   jsonls = lsp_utils.generic_setup,
@@ -24,10 +19,9 @@ local servers = {
 local nvim_lspconfig = function()
   require('neoconf').setup {}
 
-  local lspconfig = require 'lspconfig'
 
   for name, config in pairs(servers) do
-    lspconfig[name].setup(config(name) or {})
+    lsp.config(name, config(name) or {})
   end
 end
 
@@ -38,8 +32,9 @@ return {
   event = 'BufReadPost',
   dependencies = {
     'saghen/blink.cmp',
-    'folke/neodev.nvim',
+    'folke/lazydev.nvim',
     'folke/neoconf.nvim',
   },
+  init = function() for name, _ in pairs(servers) do lsp.enable(name) end end,
   config = nvim_lspconfig,
 }
