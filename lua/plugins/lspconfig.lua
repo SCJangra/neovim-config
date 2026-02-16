@@ -14,6 +14,7 @@ local servers = {
   nil_ls = lsp_utils.generic_setup,
   cssls = lsp_utils.generic_setup,
   wgsl_analyzer = lsp_utils.generic_setup,
+  prismals = lsp_utils.generic_setup,
 }
 
 local nvim_lspconfig = function()
