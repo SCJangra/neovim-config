@@ -11,7 +11,24 @@ local servers = {
   html = lsp_utils.generic_setup,
   rust_analyzer = lsp_utils.generic_setup,
   ts_ls = lsp_utils.generic_setup,
-  nil_ls = lsp_utils.generic_setup,
+  nixd = function(name)
+    local config = lsp_utils.generic_setup(name)
+    -- Inject nixd-specific settings
+    config.settings = {
+      nixd = {
+        nixpkgs = {
+          expr = 'import (builtins.getFlake (toString ./.)).inputs.nixpkgs { }',
+        },
+        options = {
+          nixos = {
+            expr = '(builtins.getFlake (toString ./.)).nixosConfigurations.nixos.options',
+          },
+        },
+      },
+    }
+
+    return config
+  end,
   cssls = lsp_utils.generic_setup,
   wgsl_analyzer = lsp_utils.generic_setup,
   prismals = lsp_utils.generic_setup,
