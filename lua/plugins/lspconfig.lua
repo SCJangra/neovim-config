@@ -11,6 +11,7 @@ local servers = {
   html = lsp_utils.generic_setup,
   rust_analyzer = lsp_utils.generic_setup,
   ts_ls = lsp_utils.generic_setup,
+  pyright = lsp_utils.generic_setup,
   nixd = function(name)
     local config = lsp_utils.generic_setup(name)
     -- Inject nixd-specific settings
